@@ -8,10 +8,13 @@ import {
     Delete,
     ParseIntPipe,
   } from '@nestjs/common';
+  import { ApiTags, ApiOperation } from '@nestjs/swagger';
+
   
   import { CustomersService } from '../services/customers.service';
   import { CreateCustomerDto, UpdateCustomerDto } from '../dtos/customer.dtos';
   
+  @ApiTags('customers')
   @Controller('customers')
   export class CustomersController {
     constructor(private customersService: CustomersService) {}
@@ -41,6 +44,6 @@ import {
   
     @Delete(':id')
     remove(@Param('id', ParseIntPipe) id: number) {
-      return this.customersService.remove(+id);
+      return this.customersService.remove(id);
     }
   }
