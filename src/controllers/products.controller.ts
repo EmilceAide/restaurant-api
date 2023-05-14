@@ -20,9 +20,9 @@ export class ProductsController {
 
   @Get()
   getProducts(
-    @Query('limit') limit = 100,
-    @Query('offset') offset = 0,
-    @Query('brand') brand: string,
+    // @Query('limit') limit = 100,
+    // @Query('offset') offset = 0,
+    // @Query('brand') brand: string,
   ) {
     return this.productsService.findAll();
   }
@@ -30,7 +30,6 @@ export class ProductsController {
   @Get(':productId')
   @HttpCode(HttpStatus.ACCEPTED)
   getOne(@Param('productId', ParseIntPipe) productId: number) {
-    // return { message: `Producto ${productId} ` };
     return this.productsService.findOne(productId);
   }
 
