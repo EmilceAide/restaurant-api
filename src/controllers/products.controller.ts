@@ -27,15 +27,6 @@ export class ProductsController {
     return this.productsService.findAll();
   }
 
-  @Get('sort')
-  getProductSort() {
-    return { message: `Soy un sort` };
-  }
-
-  @Get('filter')
-  getProductFilter() {
-    return { message: `Soy un filter` };
-  }
   @Get(':productId')
   @HttpCode(HttpStatus.ACCEPTED)
   getOne(@Param('productId', ParseIntPipe) productId: number) {
