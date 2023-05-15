@@ -13,6 +13,7 @@ import { DatabaseModule } from './database/database.module';
 import { enviroment } from './enviroments';
 import config from './config';
 
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -33,16 +34,6 @@ import config from './config';
   controllers: [AppController],
   providers: [
     AppService,
-
-    // {
-    //   provide: 'CLAVE',
-    //   useFactory: async (http: HttpService) => {
-    //     const request =  http.get('enlaceApi.com');
-    //     const clave = await lastValueFrom(request);
-    //     return clave.data;
-    //   },
-    //   inject: [HttpService],
-    // }
   ],
 })
 export class AppModule {}
