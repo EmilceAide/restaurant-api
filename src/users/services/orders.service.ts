@@ -17,6 +17,15 @@ export class OrdersService {
       .exec();
   }
 
+  // ordersByCustomer(customerId: number) {
+  //   return this.orderRepo.find({
+  //     where: {
+  //       customer: customerId,
+  //     },
+  //   });
+  // }
+
+
   async findOne(id: string) {
     return this.orderModel.findById(id);
   }
