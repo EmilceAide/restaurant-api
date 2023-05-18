@@ -16,11 +16,11 @@ export class Customer extends Document {
   @Prop()
   phone: string;
 
-  @ApiProperty()
-  @Prop({
-    type: [{ name: { type: String }, color: { type: String } }],
-  })
-  skills: Types.Array<Record<string, any>>;
+  // @ApiProperty()
+  // @Prop({
+  //   type: [{ name: { type: String }, color: { type: String } }],
+  // })
+  // skills: Types.Array<Record<string, any>>;
 }
 
 export const CustomerSchema = SchemaFactory.createForClass(Customer);

@@ -22,7 +22,7 @@ export class ProductsController {
   constructor(private productsService: ProductsService) {}
 
   @Get()
-  @ApiOperation({ summary: 'List of products'})
+  // @ApiOperation({ summary: 'List of products'})
   getProducts(
     @Query() params: FilterProductsDto,
   ) {

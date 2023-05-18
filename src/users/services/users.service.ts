@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { Db } from 'mongodb';
-import { AnyArray, Model } from 'mongoose';
+import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import * as bcrypt from 'bcrypt'; 
 
@@ -49,9 +49,10 @@ export class UsersService {
     // return rta;
   }
 
-  findByEmail(email: string) {
-    return this.userModel.findOne({email}).exec();
-  }
+  async findByEmail(email: string) {
+    const userEncontrado = await this.userModel.findOne({ email }).exec();
+    return userEncontrado;
+}
 
   update(id: string, changes: UpdateUserDto) {
     return this.userModel

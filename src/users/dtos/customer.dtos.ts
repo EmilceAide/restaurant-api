@@ -18,14 +18,15 @@ export class CreateCustomerDto {
   readonly lastName: string;
 
   @ApiProperty()
-  @IsPhoneNumber()
+  // @IsPhoneNumber()
+  @IsString()
   @IsNotEmpty()
   readonly phone: string;
 
-  @ApiProperty()
-  @IsArray()
-  @IsNotEmpty()
-  readonly skills: any;
+  // @ApiProperty()
+  // @IsArray()
+  // @IsNotEmpty()
+  // readonly skills: any;
 }
 
 export class UpdateCustomerDto extends PartialType(CreateCustomerDto) {}
