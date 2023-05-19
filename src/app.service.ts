@@ -11,9 +11,9 @@ export class AppService {
     @Inject(config.KEY) private configType: ConfigType<typeof config>) {}
 
   getHello(): string {
-    const apiKey = this.configType.apiKey;
-    const db= this.configType.database.name; 
-    return `Hello World! ${db} ${apiKey}`;
+    // const apiKey = this.configType.apiKey;
+    // const db= this.configType.database.name; 
+    return `Welcome!`;
   }
   async getProduc(){
       const produc = this.database.collection('produc');
