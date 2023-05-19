@@ -27,7 +27,7 @@ import config from '../config';
     {
       provide: 'MONGO',
       useFactory: async (configService: ConfigType<typeof config>) => {
-        const { connection, user, password, host, port, dbName } =
+        const { connection, user, password, host, dbName } =
           configService.mongo;
         const uri = `${connection}://${user}:${password}@${host}/?authMechanism=DEFAULT`;
         const client = new MongoClient(uri);
