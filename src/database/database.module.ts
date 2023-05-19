@@ -29,7 +29,7 @@ import config from '../config';
       useFactory: async (configService: ConfigType<typeof config>) => {
         const { connection, user, password, host, port, dbName } =
           configService.mongo;
-        const uri = `${connection}://${user}:${password}@${host}:${port}/?authMechanism=DEFAULT`;
+        const uri = `${connection}://${user}:${password}@${host}:${port}`;
         const client = new MongoClient(uri);
         await client.connect();
         const database = client.db(dbName);
