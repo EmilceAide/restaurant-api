@@ -12,7 +12,7 @@ import { OrdersService } from './services/orders.service';
 import { Order, OrderSchema } from './entities/order.entity';
 
 import { ProductsModule } from './../products/products.module';
-import { ProfileController } from './controllers/profile.controller';
+// import { ProfileController } from './controllers/profile.controller';
 
 @Module({
   imports: [
@@ -32,7 +32,12 @@ import { ProfileController } from './controllers/profile.controller';
       },
     ]),
   ],
-  controllers: [CustomerController, UsersController, OrdersController, ProfileController],
+  controllers: [
+    CustomerController, 
+    UsersController, 
+    OrdersController, 
+    // ProfileController
+  ],
   providers: [CustomersService, UsersService, OrdersService],
   exports: [UsersService],
 })
